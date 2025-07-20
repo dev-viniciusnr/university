@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>G_SI401A_2020S2 - Atividade 5</title>
+
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<script type="text/javascript">
+	
+	var count = Math.floor(Math.random() * 3) + 1;;
+	var aa = 0;
+	var ab = 0;
+	var ac = 0;
+	var ba = 0;
+	var bb = 0;
+	var bc = 0;
+	var ca = 0;
+	var cb = 0;
+	var cc = 0;
+	var final_jogo = 0;
+	
+	function primeiro_jogador(){
+		if(count%2 == 0){
+				document.getElementById("jogadorx").style.display = "block";
+				document.getElementById("jogadoro").style.display = "none";
+			}else{
+				document.getElementById("jogadorx").style.display = "none";
+				document.getElementById("jogadoro").style.display = "block";
+			}
+	}
+
+	function clicar(id2){
+		count ++;
+		var id = id2;
+		if(id == 'aa'){
+			if(count%2 == 0){
+				aa = 10;
+				document.getElementById("aao").style.display = "block";
+			}else{
+				aa = 1;
+				document.getElementById("aax").style.display = "block";
+			}
+			var element = document.getElementById("aa");
+			element.classList.add("nao-clicavel");
+		}
+		if(id == 'ab'){
+			if(count%2 == 0){
+				ab = 10;
+				document.getElementById("abo").style.display = "block";
+			}else{
+				ab = 1;
+				document.getElementById("abx").style.display = "block";
+			}
+			var element = document.getElementById("ab");
+			element.classList.add("nao-clicavel");
+		}
+		if(id == 'ac'){
+			if(count%2 == 0){
+				ac = 10;
+				document.getElementById("aco").style.display = "block";
+			}else{
+				ac = 1;
+				document.getElementById("acx").style.display = "block";
+			}
+			var element = document.getElementById("ac");
+			element.classList.add("nao-clicavel");
+		}
+		if(id == 'ba'){
+			if(count%2 == 0){
+				ba = 10;
+				document.getElementById("bao").style.display = "block";
+			}else{
+				ba = 1;
+				document.getElementById("bax").style.display = "block";
+			}
+			var element = document.getElementById("ba");
+			element.classList.add("nao-clicavel");
+		}
+		if(id == 'bb'){
+			if(count%2 == 0){
+				bb = 10;
+				document.getElementById("bbo").style.display = "block";
+			}else{
+				bb = 1;
+				document.getElementById("bbx").style.display = "block";
+			}
+			var element = document.getElementById("bb");
+			element.classList.add("nao-clicavel");
+		}
+		if(id == 'bc'){
+			if(count%2 == 0){
+				bc = 10;
+				document.getElementById("bco").style.display = "block";
+			}else{
+				bc = 1;
+				document.getElementById("bcx").style.display = "block";
+			}
+			var element = document.getElementById("bc");
+			element.classList.add("nao-clicavel");
+		}
+		if(id == 'ca'){
+			if(count%2 == 0){
+				ca = 10;
+				document.getElementById("cao").style.display = "block";
+			}else{
+				ca = 1;
+				document.getElementById("cax").style.display = "block";
+			}
+			var element = document.getElementById("ca");
+			element.classList.add("nao-clicavel");
+		}
+		if(id == 'cb'){
+			if(count%2 == 0){
+				cb = 10;
+				document.getElementById("cbo").style.display = "block";
+			}else{
+				cb = 1;
+				document.getElementById("cbx").style.display = "block";
+			}
+			var element = document.getElementById("cb");
+			element.classList.add("nao-clicavel");
+		}
+		if(id == 'cc'){
+			if(count%2 == 0){
+				cc = 10;
+				document.getElementById("cco").style.display = "block";
+			}else{
+				cc = 1;
+				document.getElementById("ccx").style.display = "block";
+			}
+			var element = document.getElementById("cc");
+			element.classList.add("nao-clicavel");
+		}
+	
+		if(final_jogo == 0){
+			if(aa+ab+ac == 30 || ac+bc+cc == 30 || ca+cb+cc == 30 || aa+ba+ca == 30 || aa+bb+cc == 30 || ac+bb+ca == 30 || ab+bb+cb == 30 || ba+bb+bc == 30){
+				alert('O jogador O venceu!!!!');
+				alert('Clique em Novo Jogo para jogar novamente!');
+				var element = document.getElementById("jogo-velha");
+				element.classList.add("nao-clicavel");
+				final_jogo = 1;
+			}
+
+			if(aa+ab+ac == 3 || ac+bc+cc == 3 || ca+cb+cc == 3 || aa+ba+ca == 3 || aa+bb+cc == 3 || ac+bb+ca == 3 || ab+bb+cb == 3 || ba+bb+bc == 3){
+				alert('O jogador X venceu!!!!');
+				alert('Clique em Novo Jogo para jogar novamente!');
+				var element = document.getElementById("jogo-velha");
+				element.classList.add("nao-clicavel");
+				final_jogo = 1;
+			}
+
+			if(aa != '' && ab != '' && ac != '' && ba != '' && bb != '' && bc != '' && ca != '' && cb != '' && cc != ''){
+				alert('O Jogo Empatou!!!');
+				alert('Clique em Novo Jogo para jogar novamente!');
+				final_jogo = 1;
+			}
+		}
+
+		if(final_jogo == 0){
+			if(count%2 == 0){
+				document.getElementById("jogadorx").style.display = "block";
+				document.getElementById("jogadoro").style.display = "none";
+			}else{
+				document.getElementById("jogadorx").style.display = "none";
+				document.getElementById("jogadoro").style.display = "block";
+			}
+		}
+
+
+	}
+      
+    window.onload = primeiro_jogador;
+</script>
+
+</head>
+<body>
+	<div class="jogo-status">
+		<div class="title">Status do Jogo</div>
+		<div class="texto" id="texto">
+			<span id="jogadorx" style="display: none;">Vez do jogador X</span>
+			<span id="jogadoro" style="display: none;">Vez do jogador O</span>
+		</div>
+	</div>
+	<div class="novo-jogo">
+		<button onClick="window.location.reload();"><span>NOVO JOGO</span></button>
+	</div>
+	<div class="content" id="jogo-velha">
+		<div class="aa casa" onclick="clicar(this.id)" id="aa">
+			<img src="img/x.png" id="aax" style="display: none;">
+			<img src="img/o.png" id="aao" style="display: none;">
+		</div>
+		<div class="ab casa" onclick="clicar(this.id)" id="ab">
+			<img src="img/x.png" id="abx" style="display: none;">
+			<img src="img/o.png" id="abo" style="display: none;">
+		</div>
+		<div class="ac casa" onclick="clicar(this.id)" id="ac">
+			<img src="img/x.png" id="acx" style="display: none;">
+			<img src="img/o.png" id="aco" style="display: none;">
+		</div>
+		<div class="ba casa" onclick="clicar(this.id)" id="ba">
+			<img src="img/x.png" id="bax" style="display: none;">
+			<img src="img/o.png" id="bao" style="display: none;">
+		</div>
+		<div class="bb casa" onclick="clicar(this.id)" id="bb">
+			<img src="img/x.png" id="bbx" style="display: none;">
+			<img src="img/o.png" id="bbo" style="display: none;">
+		</div>
+		<div class="bc casa" onclick="clicar(this.id)" id="bc">
+			<img src="img/x.png" id="bcx" style="display: none;">
+			<img src="img/o.png" id="bco" style="display: none;">
+		</div>
+		<div class="ca casa" onclick="clicar(this.id)" id="ca">
+			<img src="img/x.png" id="cax" style="display: none;">
+			<img src="img/o.png" id="cao" style="display: none;">
+		</div>
+		<div class="cb casa" onclick="clicar(this.id)" id="cb">
+			<img src="img/x.png" id="cbx" style="display: none;">
+			<img src="img/o.png" id="cbo" style="display: none;">
+		</div>
+		<div class="cc casa" onclick="clicar(this.id)" id="cc">
+			<img src="img/x.png" id="ccx" style="display: none;">
+			<img src="img/o.png" id="cco" style="display: none;">
+		</div>
+	</div>
+</body>
+</html>

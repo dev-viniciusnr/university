@@ -1,0 +1,107 @@
+.content{
+	width: 950px;
+	margin: 0 auto;
+}
+
+.content .casa{
+	width: 300px;
+	height: 300px;
+	display: inline-block;
+}
+
+.content .casa img{
+	margin: auto;
+}
+
+.content .aa{
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.content .ab{
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.content .ac{
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.content .ba{
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.content .bb{
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.content .bc{
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.content .ca{
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+.content .cb{
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+}
+
+.content .cc{
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+}
+
+.nao-clicavel{
+	pointer-events: none;
+}
+
+body .novo-jogo{
+	position: absolute;
+	top: 15%;
+	left: 10%;
+}
+
+body .novo-jogo button{
+	padding: 10px;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+}
+
+body .novo-jogo button span{
+	color: #fff;
+	font-weight: bold;
+}
+
+.jogo-status{
+	position: absolute;
+    border: 1px solid #000;
+    border-radius: 5px;
+    left: 10%;
+}
+
+.jogo-status .title{
+	padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    font-size: 20px;
+}
+
+.jogo-status .texto{
+	padding: 10px 10px 10px 10px;
+	font-weight: bold;
+	font-size: 20px;
+}

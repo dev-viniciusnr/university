@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 6</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function addaluno(){
+			var aluno = nome;
+			alert(aluno);
+		}
+		function mostraaluno(){
+			var show = aluno[0];
+			
+		}
+	</script>
+	<div class="container">
+		<form name="Atividade" onsubmit="return addaluno()" method="post">
+			<p>Nome <input type="text" name="nome"></p>
+			<p>RA <input type="text" name="ra"></p>
+			<p>Sexo </br>
+				<input type="radio" id="female" name="gender" value="female">
+				<label for="male">Homem</label><br>
+				<input type="radio" id="other" name="gender" value="other">
+				<label for="female">Muié</label>
+			</p>
+			<p>Idade <input type="text" name="idade"></p>
+			<p>Endereço <input type="text" name="endereco"></p>
+			<p>Telefone <input type="text" name="telefone"></p>
+			<p>E-Mail <input type="email" name="mail"></p>
+			<p><input type="submit" name="submit"></p></p>
+		</form>
+
+		<button onclick="mostraaluno()">
+			UAU
+		</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* CSS Externo*/
+.header .title{
+	width: 50%;
+	display: inline-block;
+	float: left;
+	height: 100px;
+}
+.header .menu{
+	width: 50%;
+	display: inline-block;
+	height: 100px;
+}
+
+.header .menu nav table{
+	float: right;
+	padding-top: 30px;
+}
+
+footer .logos{
+	width: 50%;
+	display: inline-block;
+}
+
+footer .logos{
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+
+footer .nome{
+	width: 50%;
+	display: inline-block;
+}
+
+footer .nome h2{
+	float: right;
+}
+
+.header .title{
+	width: 50%;
+	display: inline-block;
+	float: left;
+	height: 100px;
+}
+
+body .header{
+	border-bottom: 1px solid #DCDCDC;
+		background-color: #fff;
+}
+
+body .header .menu a{
+	text-transform: none;
+	margin: 0px 20px;
+	text-decoration: none;
+} 
+
+body .content{
+	margin: 0% 20%;
+}
+
+body footer{
+	border-top: 1px solid #DCDCDC;
+    margin-top: 25px;
+    padding-top: 25px;
+}

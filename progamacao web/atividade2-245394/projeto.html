@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>G_SI401A_2020S2 - Programação para a Web</title>
+
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<style type="text/css">
+		.header .title{
+			width: 50%;
+			display: inline-block;
+			float: left;
+			height: 100px;
+		}
+	</style>
+
+</head>
+<body>
+	<header class="header">
+		<div class="title">
+			<h1>G_SI401A_2020S2 - Programação para a Web</h1>
+		</div>
+		<div class="menu">
+			<nav>
+				<table>
+					<tr>
+						<td><a href="index.html">Inicio</a></td>
+						<td><a href="linguagens.html">Linguagens Utilizadas</a></td>
+						<td><a href="monitoria.html">Monitoria</a></td>
+						<td><a href="projeto.html">Projeto Final</a></td>
+						<td><a href="https://moodle.ggte.unicamp.br/pluginfile.php/1234393/mod_resource/content/12/SI401A_PlanoDeEnsino_2s2020.pdf" target="_blank">Plano De Ensino</a></td>
+					</tr>
+				</table>
+			</nav>
+		</div>
+	</header>
+	<div class="content">
+		<h1>Projeto Final</h1>
+		<p>Nesta Página sera Encontrado o que se deve fazer no Projeto Final da Disciplina de Programação para Web</p>
+		<div class="projeto">
+			<h2>Enunciado Geral</h2>
+			<p>Criado em 1984 por Alexey Pajitnov, <a href="https://tetris.com/about-us" target="_blank">Tetris</a> é um jogo muito popular em que o jogador deve rotacionar e encaixar peças (chamadas Tetriminos) que caem da parte superior de um tabuleiro com uma certa velocidade. O objetivo final do jogo é preencher totalmente o maior número possível de linhas horizontais pois, uma vez preenchidas, estas linhas desaparecem e o jogador ganha mais espaço no tabuleiro para continuar a tarefa, somando pontos no processo. Com o passar o tempo, geralmente a velocidade de queda das peças aumenta, tornando o jogo gradualmente mais difícil. A partida termina quando não há mais espaço no tabuleiro para acomodar novas peças.</p>
+			<p>Para ilustrar o funcionamento do jogo, a Figura 1 exibe um tabuleiro de uma versão de Tetris onde a peça corrente a ser encaixada (e que está caindo na tela) é a peça azul claro. Note que, se o jogador encaixá-la no espaço destacado, eliminará quatro linhas do tabuleiro, liberando todo este espaço.</p>
+			<p><img src="imagens/projeto_1.png"><span><b>Figura 1</b> - Exemplo de um jogo de Tetris.</span></p>
+			<p>Existem inúmeras variações do jogo Tetris, com modificações nos tipos de peças, no tamanho dos tabuleiros, nas regras de pontuação, na dinâmica de queda das peças etc. Mais informações podem ser obtidas aqui.</p>
+			<p>Neste trabalho você deverá desenvolver e implementar uma <b>plataforma online</b>, usando as ferramentas estudadas na disciplina (HTML, CSS, JavaScript e PHP), que permita que um jogador cadastrado jogue partidas de uma nova versão do jogo Tetris, chamada <b>Rolling Tetris (RT)</b>.</p>
+			<p>
+				<b>RT</b> segue regras parecidas com as da versão clássica de Tetris, mas com as seguintes particularidades:</br>
+				<ul>
+					<li>Ao longo da partida e de maneira aleatória podem surgir <b>peças especiais</b> que, quando compõem uma linha eliminada, provocam a <b>rotação</b> do tabuleiro. Ou seja, se as peças estavam "caindo" antes da linha com a peça especial ser eliminada, elas passarão a "subir" e vice-versa (daí o nome Rolling Tetris). A cada rotação, as peças não eliminadas que estão acumuladas em um extremo do tabuleiro (seja na parte inferior, quando as peças "caem", ou superior, quando as peças "sobem") devem ser <b>transferidas</b> para o outro extremo, mantendo-se as posições.</li>
+					<li>O jogador deverá ter a opção de <b>escolha do tamanho do tabuleiro</b> em que a partida se desenrolará. Pelo menos duas opções deverão ser dadas: (i) um tabuleiro clássico, com 10 células de largura e 20 células de altura (igual ao da Figura 1); e (ii) um tabuleiro maior, de dimensões 22 x 44 células (largura x altura).</li>
+					<li>Além da <b>peça especial</b> que leva à rotação do tabuleiro, formada por <b>uma única célula do tabuleiro (quadradinho)</b> e exibida em cor chamativa, <b>seis peças diferentes</b>, cujas estruturas são dadas na Figura 2, poderão surgir na tela (sempre uma por vez). A escolha da peça que surgirá deverá ser feita <b>aleatoriamente</b> pelo jogo, sendo que todas as sete peças (seis da Figura 2 mais a peça especial) deverão ter a mesma probabilidade de surgimento.</li>
+				</ul>
+			</p>
+			<p><img src="imagens/projeto_2.png"><span><b>Figura 2</b> - Peças regulares que deverão estar presentes na sua implementação de RT. Além dessas, o jogo deverá contar também com a peça especial, formada por uma única célula do tabuleiro.</span></p>
+			<p>
+				<ul>
+					<li>O jogador controlará a movimentação das peças utilizando as <b>quatro setas do teclado</b>.</li>
+					<li>A pontuação deve levar em conta um <b>bônus</b>, a ser aplicado sempre que o usuário eliminar mais de uma linha de uma única vez. Cada linha eliminada gerará uma soma de <b>10 pontos</b> no placar total do usuário e o bônus corresponderá à <b>multiplicação dos pontos gerados em uma eliminação pelo número de linhas eliminadas simultaneamente.</b> Por exemplo, se o jogador eliminar 3 linhas simultaneamente, será adicionado ao seu placar (10 + 10 + 10) x 3 = 90 pontos. Lembre-se que o usuário poderá eliminar, no máximo, quatro linhas simultaneamente.</li>
+					<li>A <b>velocidade com que cada peça sobe/desce pelo tabuleiro</b> deve variar conforme o placar do jogador, para que a dificuldade aumente com o passar do tempo. Você deverá programar o jogo para que a velocidade de subida aumente sempre que o jogador atingir uma pontuação múltipla de 300 pontos. Caberá a você calibrar como esta velocidade mudará. Cuide para que o jogo não se torne muito difícil muito rapidamente nem seja muito lento para se tornar desafiador.</li>
+				</ul>
+			</p>
+			<p>A implementação de <b>RT</b> deverá ser toda feita em JavaScript, para <u>execução no front-end</u>. No entanto, a <b>plataforma online do jogo</b> também deverá contar com um módulo em back-end, responsável por gerenciar a autenticação dos jogadores, o armazenamento e recuperação dos resultados de cada partida jogada e a elaboração de um ranking dos 10 melhores jogadores de <b>RT</b> cadastrados na plataforma. Mais informações sobre o front-end e back-end são dadas a seguir.</p>
+			
+			</br>
+			<h3>Front-End</h3>
+			<p>A primeira tela a ser exibida para qualquer usuário que acesse o sistema deve conter dois campos de um formulário para autenticação: um para o <b>usuário</b> e o outro para a <b>senha</b> (além de um botão para enviar os dados fornecidos). Além disso, deverá haver um link para uma página de cadastro no sistema, caso o usuário não possua usuário e senha.</p>
+			
+			<p>Na página de cadastro o sistema deverá solicitar os seguintes dados de um novo jogador: <b>nome completo, data de nascimento, CPF, telefone e e-mail</b>, além do <b>username</b> (único) e da <b>senha</b> para acesso ao sistema. Estes dados deverão ser mantidos na <b>plataforma</b> enquanto a conta do jogador estiver ativa.</p>
+			
+			<p>Uma vez autenticado no sistema, o jogador deverá ser redirecionado para uma página que contenha o <b>RT</b> implementado em JavaScript. Além do jogo em si, nessa página o usuário deverá visualizar pelo menos as seguintes informações:</p>
+			
+			<p>
+				<ul>
+					<li><b>Tempo da partida</b> até o momento (caso iniciada), <b>pontuação, número de linhas eliminadas e nível de dificuldade</b> em que se encontra (associado à velocidade de queda das peças).</li>
+					<li>Ranking com os resultados de todas as partidas jogadas anteriormente por aquele jogador. Tal ranking deve exibir as seguintes informações: <b>nome do jogador, pontuação obtida, nível atingido e tempo de duração da partida</b>.</li>
+				</ul>
+			</p>
+			
+			<p>Na página que contém o <b>RT</b> o usuário também deverá ter acesso a hyperlinks que o levam a duas outras páginas do sistema, além de uma <b>opção para desconectar e retornar à página de login</b>: uma página com o <b>ranking global</b> de jogadores e outra onde ele poderá <b>editar suas informações pessoais</b>. Nesta página de edição de informações pessoais, os campos data de nascimento, CPF e username <b><u>NÃO</u></b> poderão ser alterados.</p>
+
+			<p>Por fim, na página de <b>ranking global</b> de jogadores o sistema deverá mostrar os <b>usernames, pontuações e nível máximo</b> atingido para as <b>10 melhores pontuações</b> obtidas dentre todos os jogadores registrados no sistema, além de um indicativo da posição atual em que o jogador autenticado no sistema estaria dentro deste ranking global.</p>
+
+			<p>Ao final de cada partida, o sistema deverá permitir ao usuário escolher se ele deseja ou não iniciar uma nova partida.</p>
+
+			<p><b><u>ATENÇÃO 1</u></b>: todas as páginas exibidas no front-end deverão seguir o padrão HTML 5 e contar com folhas de estilo prioritariamente externas, escritas em CSS (versão 2 ou superior). Tanto os documentos HTML enviados pela plataforma ao navegador dos usuários quanto as folhas de estilo devem ser validadas nos validadores de HTML e CSS do W3C:</p>
+			<p>
+				<ul>
+					<li>Validador de HTML: <a href="https://validator.w3.org/" target="blank">https://validator.w3.org/</a></li>
+					<li>Validador de CSS: <a href="https://jigsaw.w3.org/css-validator/" target="blank">https://jigsaw.w3.org/css-validator/</a></li>
+				</ul>
+			</p>
+			
+			<p><b><u>ATENÇÃO 2</u></b>: <b>NÃO</b> é recomendado o uso de templates CSS neste trabalho mas, caso o grupo queira usá-los, é <b><u>mandatório</u></b> indicar isto explicitamente no site e fornecer um link para a(s) fonte(s).</p>
+			
+			<p><b><u>ATENÇÃO 3</u></b>: para o desenvolvimento do jogo, será necessário estudar o funcionamento de <a href="https://www.w3schools.com/js/js_timing.asp" target="_blank">eventos temporizados</a> em JavaScript.</p>
+			
+			</br>
+			<h3>Back-End</h3>
+			<p>Como já mencionado, o back-end da plataforma do <b>RT</b> será responsável por gerenciar a autenticação dos jogadores, o armazenamento e recuperação dos resultados de cada partida jogada e a elaboração do ranking de melhores jogadores cadastrados. Toda a implementação do back-end deverá ser feita em <b>PHP</b> e os dados armazenados em um Sistema Gerenciador de Bancos de Dados (SGBD) SGBD <b>MySQL</b> ou <b>MariaDB</b>.</p>
+
+			<p>Além do armazenamento persistente dos dados e sua recuperação sempre que necessário, caberá à implementação do back-end garantir que <b>apenas</b> usuários autenticados tenham acesso às páginas da <b>plataforma</b>. Caso um usuário não esteja autenticado, ele <b><u>NÃO</u></b> poderá acessar nenhuma página do sistema exceto a página de login (página inicial). Para isso, deverá ser utilizado o mecanismo de <b>sessões</b> de PHP.</p>
+
+			<p>As tabelas MySQL/MariaDB em que ficarão armazenados os dados tantos das partidas quanto de usuários do sistema devem ser definidas pelo grupo. A partir dessas definições, deverá ser entregue um <b>script PHP</b> (separado do projeto principal) <b>para criação das tabelas necessárias para o correto funcionamento do sistema, além de um arquivo-texto com instruções para sua utilização</b>.</p>
+
+			<p><b><u>ATENÇÃO 1</u></b>: <b>NÃO</b> é permitido o uso de frameworks PHP.</p>
+
+			<p><b><u>ATENÇÃO 2</u></b>: caso seja necessário o envio de dados para o servidor, via POST e utilizando JavaScript, considere o uso da <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank">interface FormData</a> e da <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank">API XMLHttpRequest</a>. </p>
+
+			</br>
+			<h3>Regras para o Trabalho</h3>
+
+			<p>
+				<ol>
+					<li>Esse Projeto deverá ser desenvolvido em <b><u>grupos</u> de 4 a 5 alunos</b>.</li>
+					<li>Como consta no <a href="https://moodle.ggte.unicamp.br/pluginfile.php/1234393/mod_resource/content/12/SI401A_PlanoDeEnsino_2s2020.pdf" target="_blank">Plano de Ensino da Disciplina</a>, a nota desse Projeto corresponderá a 80% da média de cada aluno.</li>
+					<li>Ao longo do semestre, cada grupo deverá entregar <b><u>três parciais</u></b> do Projeto, correspondentes a versões incrementais do sistema (o peso de cada uma na nota do Projeto estão no Plano de Ensino da Disciplina). Tais parciais serão:
+						<ul>
+							<li><b>Parcial 1</b>: documentos HTML correspondentes a <b>versões não-funcionais</b> das páginas previstas para o jogo, já com todas as definições de estilo via CSS. Nessa versão preliminar do sistema, <b><u>todas</u></b> as páginas deverão estar presentes, já com a formatação final e com hyperlinks que levem o usuário às demais páginas do sistema. No entanto, as funcionalidades de controle de acesso, do jogo em si, e o armazenamento e recuperação de informações <b>não devem</b> estar presentes. Substitua os campos das páginas que dependem dos aspectos dinâmicos do sistema por imagens ou valores estáticos (ex.: uma figura que corresponda ao tabuleiro do Rolling Tetris e valores fixos nas tabelas de ranking). A ordem de navegação entre as páginas já deve ser a final.</li>
+							<li><b>Parcial 2</b>: nesta segunda versão do sistema, toda a dinâmica do Rolling Tetris deverá estar implementada e funcional, mas a plataforma ainda não terá nenhuma funcionalidade relacionada ao back-end. Ou seja, o usuário poderá jogar quantas partidas de <b>RT</b> quiser, mas o sistema <b>não</b> contará com o controle de acesso ou persistência de dados.</li>
+							<li><b>Parcial 3</b>: corresponde ao incremento final do sistema, com a implementação de todas as funcionalidade relacionadas ao back-end. Espera-se que essa entrega corresponda à versão final do sistema, com as funcionalidades de front-end e back-end mencionadas anteriormente devidamente integradas e testadas.</li>
+						</ul>
+					</li>
+					<li>A entrega de cada parcial do Projeto será composta por dois arquivos:
+						<ul>
+							<li>Um arquivo <b>.ZIP</b> contendo todos os arquivos necessários para configuração e execução do sistema (.html, .js, .php, .css, imagens etc.). É importante manter, no arquivo .ZIP, a <b>estrutura de diretórios</b> necessária para execução do jogo e incluir um <b>arquivo TXT ou PDF</b> que contenha:
+								<ul>
+									<li>As instruções necessárias para configuração e uso do sistema;</li>
+									<li>O link para o <b>vídeo</b> de apresentação da parcial entregue pelo grupo.</li>
+								</ul>
+							</li>
+							<li>Um arquivo <b>.XLSX</b> contendo o detalhamento da contribuição de cada membro do grupo. Este arquivo corresponde ao modelo disponível aqui, preenchido pelo grupo.</li>
+						</ul>
+					</li>
+					<li>Cada parcial entregue deverá ser acompanhada de um <b>vídeo</b>, de <b><u>no máximo 10 minutos</u></b>, em que <b><u>todos</u></b> os membros do grupo apresentam o que foi desenvolvido naquela parcial. Espera-se uma apresentação não apenas do funcionamento do sistema, mas da estrutura interna do que foi desenvolvido naquela parcial.
+						<ul>
+							<li>O foco de cada vídeo deve ser no conteúdo da parcial que está sendo entregue (não é necessário reexplicar o que já foi apresentado em vídeos anteriores).</li>
+							<li>O vídeo deve ser hospedado em algum serviço gratuito (ex.: YouTube) e o link fornecido junto com a entrega.</li>
+						</ul>
+					</li>
+					<li>Todo o código-fonte em JavaScript deve estar contido em <b>um único arquivo</b> .JS externo (exceto as chamadas às funções implementadas, que podem estar no HTML conforme a necessidade).</li>
+					<li>Todas as definições de formatação geral das páginas deverão estar contidas em folhas de estilo CSS externas. É <b>obrigatório</b> o uso de folhas de estilo em cada página.</li>
+					<li>Todos os documentos HTML gerados deverão seguir a versão 5 (HTML5).</li>
+					<li>Tanto os arquivos HTML quando as folhas de estilo CSS deverão ser validados no site do W3C.</li>
+					<li><b>Funcionalidades adicionais</b> ao que foi pedido na dinâmica do Rolling Tetris são bem-vindas e podem gerar um <b>bônus de até 2,0 pontos na nota da Parcial 2</b> (conforme sua complexidade/importância para o contexto desta atividade). No entanto, é necessário que o grupo enfatize tais contribuições adicionais no <b>vídeo de apresentação</b> da parcial.</li>
+					<li><b>Cópias de outros grupos ou da internet serão penalizadas como descrito no <a href="https://moodle.ggte.unicamp.br/pluginfile.php/1234393/mod_resource/content/12/SI401A_PlanoDeEnsino_2s2020.pdf" target="_blank">Plano de Ensino da Disciplina</a>.</b></li>
+					<li><b>Não serão aceitos trabalhos entregues fora do prazo</b>.</li>
+				</ol>
+			</p>
+
+			</br>
+			<h3>Observação</h3>
+			<p>
+				<img src="imagens/projeto_3.jpg">
+			</p>
+
+		</div>
+	</div>
+	<footer style="padding-top: 50px">
+		<div class="logos">
+			<img src="imagens/logounicamp.png">
+			<img src="imagens/logoft.png">
+		</div>
+		<div class="nome">
+			<h2>vinicius nonato rodrigues - 245394</h2>
+		</div>
+	</footer>
+</body>
+</html>
