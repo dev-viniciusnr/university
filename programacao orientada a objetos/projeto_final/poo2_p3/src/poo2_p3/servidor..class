@@ -1,0 +1,185 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.LineBorder;
+
+public class Servidor2 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Servidor frame = new Servidor();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	/**
+	 * Create the frame.
+	 */
+	public Servidor() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 700, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel title = new JLabel ("Número de Semaforos Ativos: 0");
+		title.setForeground(Color.WHITE);
+		title.setFont (title.getFont ().deriveFont (20.0f));
+		contentPane.add(title);
+		JPanel title_panel = new JPanel();
+		title_panel.setBackground(Color.DARK_GRAY);
+		title_panel.setBounds(200, 50, 300, 50);
+		title_panel.add(title);
+		contentPane.add(title_panel);
+		
+		JLabel semaforo1_title = new JLabel ("199.000.000.000:12312");
+		semaforo1_title.setForeground(Color.WHITE);
+		semaforo1_title.setFont (semaforo1_title.getFont ().deriveFont (11.0f));
+		JPanel semaforo1_panel = new JPanel();
+		semaforo1_panel.setBackground(Color.DARK_GRAY);
+		semaforo1_panel.setBounds(35, 150, 125, 25);
+		semaforo1_panel.add(semaforo1_title);
+		contentPane.add(semaforo1_panel);
+		
+		JLabel semaforo2_title = new JLabel ("199.000.000.000:12312");
+		semaforo2_title.setForeground(Color.WHITE);
+		semaforo2_title.setFont (semaforo2_title.getFont ().deriveFont (11.0f));
+		JPanel semaforo2_panel = new JPanel();
+		semaforo2_panel.setBackground(Color.DARK_GRAY);
+		semaforo2_panel.setBounds(195, 150, 125, 25);
+		semaforo2_panel.add(semaforo2_title);
+		contentPane.add(semaforo2_panel);
+		
+		JLabel semaforo3_title = new JLabel ("199.000.000.000:12312");
+		semaforo3_title.setForeground(Color.WHITE);
+		semaforo3_title.setFont (semaforo3_title.getFont ().deriveFont (11.0f));
+		JPanel semaforo3_panel = new JPanel();
+		semaforo3_panel.setBackground(Color.DARK_GRAY);
+		semaforo3_panel.setBounds(355, 150, 125, 25);
+		semaforo3_panel.add(semaforo3_title);
+		contentPane.add(semaforo3_panel);
+		
+		JLabel semaforo4_title = new JLabel ("199.000.000.000:12312");
+		semaforo4_title.setForeground(Color.WHITE);
+		semaforo4_title.setFont (semaforo4_title.getFont ().deriveFont (11.0f));
+		JPanel semaforo4_panel = new JPanel();
+		semaforo4_panel.setBackground(Color.DARK_GRAY);
+		semaforo4_panel.setBounds(515, 150, 125, 25);
+		semaforo4_panel.add(semaforo4_title);
+		contentPane.add(semaforo4_panel);
+		
+		
+		
+		JPanel semaforo1_vermelho = new JPanel();
+		semaforo1_vermelho.setBackground(Color.BLACK);
+		semaforo1_vermelho.setBorder(new LineBorder(new Color(255, 0, 0), 1, true));
+		semaforo1_vermelho.setBounds(50, 200, 25, 25);
+		contentPane.add(semaforo1_vermelho);
+		
+		JPanel semaforo1_amarelo = new JPanel();
+		semaforo1_amarelo.setBorder(new LineBorder(Color.YELLOW));
+		semaforo1_amarelo.setBackground(Color.BLACK);
+		semaforo1_amarelo.setBounds(85, 200, 25, 25);
+		contentPane.add(semaforo1_amarelo);
+		
+		JPanel semaforo1_verde = new JPanel();
+		semaforo1_verde.setBorder(new LineBorder(Color.GREEN));
+		semaforo1_verde.setBackground(Color.BLACK);
+		semaforo1_verde.setBounds(120, 200, 25, 25);
+		contentPane.add(semaforo1_verde);
+		
+		JPanel semaforo1 = new JPanel();
+		semaforo1.setBackground(Color.BLACK);
+		semaforo1.setBounds(40, 187, 115, 50);
+		contentPane.add(semaforo1);
+		
+		JPanel semaforo2_vermelho = new JPanel();
+		semaforo2_vermelho.setBackground(Color.BLACK);
+		semaforo2_vermelho.setBorder(new LineBorder(new Color(255, 0, 0), 1, true));
+		semaforo2_vermelho.setBounds(210, 200, 25, 25);
+		contentPane.add(semaforo2_vermelho);
+		
+		JPanel semaforo2_amarelo = new JPanel();
+		semaforo2_amarelo.setBorder(new LineBorder(Color.YELLOW));
+		semaforo2_amarelo.setBackground(Color.BLACK);
+		semaforo2_amarelo.setBounds(245, 200, 25, 25);
+		contentPane.add(semaforo2_amarelo);
+		
+		JPanel semaforo2_verde = new JPanel();
+		semaforo2_verde.setBorder(new LineBorder(Color.GREEN));
+		semaforo2_verde.setBackground(Color.BLACK);
+		semaforo2_verde.setBounds(280, 200, 25, 25);
+		contentPane.add(semaforo2_verde);
+		
+		JPanel semaforo2 = new JPanel();
+		semaforo2.setBackground(Color.BLACK);
+		semaforo2.setBounds(200, 187, 115, 50);
+		contentPane.add(semaforo2);
+		
+		JPanel semaforo3_vermelho = new JPanel();
+		semaforo3_vermelho.setBackground(Color.BLACK);
+		semaforo3_vermelho.setBorder(new LineBorder(new Color(255, 0, 0), 1, true));
+		semaforo3_vermelho.setBounds(370, 200, 25, 25);
+		contentPane.add(semaforo3_vermelho);
+		
+		JPanel semaforo3_amarelo = new JPanel();
+		semaforo3_amarelo.setBorder(new LineBorder(Color.YELLOW));
+		semaforo3_amarelo.setBackground(Color.BLACK);
+		semaforo3_amarelo.setBounds(405, 200, 25, 25);
+		contentPane.add(semaforo3_amarelo);
+		
+		JPanel semaforo3_verde = new JPanel();
+		semaforo3_verde.setBorder(new LineBorder(Color.GREEN));
+		semaforo3_verde.setBackground(Color.BLACK);
+		semaforo3_verde.setBounds(440, 200, 25, 25);
+		contentPane.add(semaforo3_verde);
+		
+		JPanel semaforo3 = new JPanel();
+		semaforo3.setBackground(Color.BLACK);
+		semaforo3.setBounds(360, 187, 115, 50);
+		contentPane.add(semaforo3);
+		
+		JPanel semaforo4_vermelho = new JPanel();
+		semaforo4_vermelho.setBackground(Color.BLACK);
+		semaforo4_vermelho.setBorder(new LineBorder(new Color(255, 0, 0), 1, true));
+		semaforo4_vermelho.setBounds(530, 200, 25, 25);
+		contentPane.add(semaforo4_vermelho);
+		
+		JPanel semaforo4_amarelo = new JPanel();
+		semaforo4_amarelo.setBorder(new LineBorder(Color.YELLOW));
+		semaforo4_amarelo.setBackground(Color.BLACK);
+		semaforo4_amarelo.setBounds(565, 200, 25, 25);
+		contentPane.add(semaforo4_amarelo);
+		
+		JPanel semaforo4_verde = new JPanel();
+		semaforo4_verde.setBorder(new LineBorder(Color.GREEN));
+		semaforo4_verde.setBackground(Color.BLACK);
+		semaforo4_verde.setBounds(600, 200, 25, 25);
+		contentPane.add(semaforo4_verde);
+		
+		JPanel semaforo4 = new JPanel();
+		semaforo4.setBackground(Color.BLACK);
+		semaforo4.setBounds(520, 187, 115, 50);
+		contentPane.add(semaforo4);
+		
+	}
+
+}
